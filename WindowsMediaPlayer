@@ -1,0 +1,26 @@
+using System;
+using System.Windows.Forms;
+using AxWMPLib;
+
+public partial class Form1 : Form
+{
+    private AxWindowsMediaPlayer mediaPlayer;
+
+    public Form1()
+    {
+        InitializeComponent();
+        mediaPlayer = new AxWindowsMediaPlayer();
+        Controls.Add(mediaPlayer);
+    }
+
+    private void buttonPlay_Click(object sender, EventArgs e)
+    {
+        mediaPlayer.URL = @"C:\path\to\your\video\file.mp4";
+        mediaPlayer.Ctlcontrols.play();
+    }
+
+    private void buttonStop_Click(object sender, EventArgs e)
+    {
+        mediaPlayer.Ctlcontrols.stop();
+    }
+}
